@@ -33,7 +33,8 @@ const Vegetable = db.define('vegetable', {
     allowNull: false
   },
   planted_on: {
-    type: Sequelize.DATE
+    type: Sequelize.DATE,
+    defaultValue: Sequelize.NOW
   }
 })
 
@@ -46,4 +47,4 @@ Gardener.belongsTo(Vegetable, { as: 'favoriteVegetable' });
 //   console.log("connected to database");
 // })
 
-module.exports = { db };
+module.exports = { db,Plot,Gardener,Vegetable };
